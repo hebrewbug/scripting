@@ -1,5 +1,5 @@
 # pip install shellpy
-# shellpy script.spi
+# shellpy script.spy
 
 import json
     import os
