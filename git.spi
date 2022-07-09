@@ -1,0 +1,28 @@
+# pip install shellpy
+# shellpy script.spi
+
+import json
+    import os
+    import tempfile
+
+    # receiving answer from git by using curl
+    answer = `curl https://api.github.com/users/python
+
+    # checking that result is not null
+    if answer:
+        answer_json = json.loads(answer.stdout)
+        avatar_url = answer_json['avatar_url']
+
+        destination = os.path.join(tempfile.gettempdir(), 'python.png')
+
+        # downloading of picture
+        result = `curl {avatar_url} > {destination}
+        if result:
+            # showing the picture 
+            p`ls -l {destination}
+        else:
+            print('Failed to download avatar')
+
+        print('Avatar downloaded')
+    else:
+        print('Failed to access github api')
