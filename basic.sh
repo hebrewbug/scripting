@@ -39,14 +39,34 @@ df -h /home
 du -sh /var/log/*
 #-h (human-readable) option, the -s option for the total size
 
-#showing which user use this application
+# showing which user use this application
 dnf -y install httpd
 # output: you are not allowed to perform this command. So you need to use id to check who are allowed
 id
 
 chmod +x test.sh
 
-#try using dig (DNS lookup utility) or nslookup (query Internet name servers) to figure out why the application can't seem to resolve the database
+# attempt using dig (DNS lookup utility) or nslookup (query Internet name servers) to figure out why the application can't seem to resolve the database
 nslookup mydatabase
 dig mydatabase
+
+
+# ports
+nettop
+
+# local interfaces + ips
+arp -a
+
+networksetup -listallhardwareports
+
+
+which 'service_name'
+
+watch free -m
+
+
+man 'servicename'
+man netstat
+
+
 
